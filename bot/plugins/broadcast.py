@@ -215,7 +215,7 @@ async def broadcast(req_result, file_id, client: Client):
             except Exception as e:
                 print('CHILDREN ERROR - ', str(e))
                 children = ''
-    broadcast_msg = "📬 __[{}]: DTU Site has been Updated!__\n\n🌀 __Latest Notice Title__ - \n**{}**\n\n{}📍__Under Tab__ --> {}\n\n🔮 Cheers from @DTUAlertBot!".format(
+    broadcast_msg = "📬 __[{}]: DTU Site has been Updated!__\n\n🌀 __Latest Notice Title__ - \n**{}**\n\n{}📍__Under Tab__ --> {}\n\n🔮".format(
         datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         req_result["title"],
         children,
