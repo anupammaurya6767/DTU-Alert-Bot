@@ -133,7 +133,7 @@ def request_time(client: Client, get_tree={}):
         modified_keys = dict_compare(records, previous_records)
         if modified_keys != []:
             logging.info(modified_keys)
-            if(WEBHOOK_INTEGRATION):
+            if(True):
                 try:
                     data = {"notice": modified_keys}
                     xhash = sign_request(json.dumps(data, separators=(',', ':')))
