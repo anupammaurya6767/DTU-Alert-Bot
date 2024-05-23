@@ -233,7 +233,7 @@ def sign_request(body):
     return str(signature1)
 
 
-def send_webhook_alert(xhash, body):
+def send_webhook_alert(body):
     Headers = {"Content-Type": "application/json"}
     r = requests.post(url=WEBHOOK_ADDRESS, data=body, headers=Headers)
     print(r)
