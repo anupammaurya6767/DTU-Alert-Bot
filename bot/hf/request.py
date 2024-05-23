@@ -137,7 +137,7 @@ def request_time(client: Client, get_tree={}):
                 try:
                     data = {"notice": modified_keys}
                     xhash = sign_request(json.dumps(data, separators=(',', ':')))
-                    send_webhook_alert(xhash, json.dumps(data, separators=(',', ':')))
+                    send_webhook_alert(json.dumps(data, separators=(',', ':')))
                 except Exception as e:
                     logging.error(e)
             else:
@@ -234,7 +234,7 @@ def sign_request(body):
 
 
 def send_webhook_alert(xhash, body):
-    Headers = {"X-Hub-Signature": xhash, "Content-Type": "application/json"}
+    Headers = {"Content-Type": "application/json"}
     r = requests.post(url=WEBHOOK_ADDRESS, data=body, headers=Headers)
     print(r)
     logging.info("Webhook configured.\nBody - ." +
